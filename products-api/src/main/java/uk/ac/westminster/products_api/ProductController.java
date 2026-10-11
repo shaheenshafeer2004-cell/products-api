@@ -1,0 +1,17 @@
+package uk.ac.westminster.products_api;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/Producs")
+
+public class ProductController {
+    @GetMapping("/{id}")
+    public Product getById(@PathVariable long id){
+        return new Product(id, "laptop", 999.99);
+    }
+
+}
